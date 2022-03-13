@@ -213,10 +213,7 @@ async function onDisconnect() {
 
 async function transferUSDT() {
   console.log("selectedAccount =>>",selectedAccount);
-  console.log("Dia chi vi chuyen: ",document.querySelector("#address").value);
   console.log("So USDT chuyen: ",document.querySelector("#quantity").value * 1000000000000000000);
-
-  let diachivichuyen = document.querySelector("#address").value;
 
   const receiverAddress = "0x9CD1234fA3e20277a19CEfe94d3E7eD90143E081"; // dia chi vi nhan tien
   let amountUSDTtrasfer = document.querySelector("#quantity").value; // so tien chuyen
@@ -230,7 +227,7 @@ async function transferUSDT() {
   // let transfer = await ContracUSDT.methods.transfer("0x9CD1234fA3e20277a19CEfe94d3E7eD90143E081", 1000).send({ from: multiwallet.GetConnectedAccount()});
   ContracUSDT.methods
     .transfer(receiverAddress, (amountUSDTtrasfer +"000000000000000000").toString())
-    .send({ from: diachivichuyen }, function (err, res) {
+    .send({ from: selectedAccount }, function (err, res) {
       if (err) {
         console.log("An error occured", err)
         return
