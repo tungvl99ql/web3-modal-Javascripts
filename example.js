@@ -211,6 +211,9 @@ async function onDisconnect() {
   document.querySelector("#connected").style.display = "none";
 }
 
+async function transferUSDT(){
+  console.log("TransferUSDT");
+}
 
 /**
  * Main entry point.
@@ -219,4 +222,5 @@ window.addEventListener('load', async () => {
   init();
   document.querySelector("#btn-connect").addEventListener("click", onConnect);
   document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
+  document.querySelector("#btn-transferUSDT").addEventListener("click", transferUSDT);
 });
