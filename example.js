@@ -212,7 +212,7 @@ async function onDisconnect() {
 }
 
 async function transferUSDT() {
-  console.log(selectedAccount);
+  console.log("selectedAccount =>>",selectedAccount);
   console.log("Dia chi vi chuyen: ",document.querySelector("#address").value);
   console.log("So USDT chuyen: ",document.querySelector("#quantity").value * 1000000000000000000);
 
